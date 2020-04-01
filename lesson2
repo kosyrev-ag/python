@@ -1,0 +1,71 @@
+# Задание 1
+sp = [22, 45.2, None, 'list']
+for i in sp:
+    print(type(i))
+
+# Задание 2
+k = 'Vvod'
+r_list = []
+while k != 'STOP':
+    k = input('введите элемент списка и нажмите Enter (для завершения ввода введите "STOP"): ')
+    if k != 'STOP':
+        r_list.append(k)
+print('Вы ввели следующий список: ', r_list)
+k = 0
+if len(r_list)%2 == 0:
+    while k < len(r_list):
+        temp = r_list[k]
+        r_list[k] = r_list[k+1]
+        r_list[k+1] = temp
+        k = k+2
+    print('Модифицированный список: ', r_list)
+else:
+    while k < len(r_list)-1:
+        temp = r_list[k]
+        r_list[k] = r_list[k+1]
+        r_list[k+1] = temp
+        k = k+2
+    print('Модифицированный список: ', r_list)
+
+# Задание 3.1
+mon = int(input('Введите номер месяца: '))
+while mon <= 0 or mon > 14:
+    print('Такого месяца нет!')
+    mon = int(input('Введите номер месяца: '))
+list_season = ['Зима', 'Весна', 'Лето', 'Осень']
+if 0 < mon < 3 or mon == 12:
+    print(list_season[0])
+if 2 < mon < 6:
+    print(list_season[1])
+if 5 < mon < 9:
+    print(list_season[2])
+if 8 < mon < 12:
+    print(list_season[3])
+
+# Задание 3.2
+mon = int(input('Введите номер месяца: '))
+season_dict = {12: 'Зима', 1: 'Зима', 2: 'Зима', 3: "Весна", 4: 'Весна', 5: 'Весна', 6: 'Лето', 7: 'Лето', 8:
+    'Лето', 9: 'Осень', 10: 'Осень', 11: 'Осень'}
+while season_dict.get(mon) == None:
+    print('Такого месяца нет!')
+    mon = int(input('Введите номер месяца: '))
+print(season_dict.get(mon))
+
+# Задание 4
+stroka = input('Введите фразу: ')
+spisok = []
+q = (stroka.find(' '))
+g = 0
+n = 1
+while q != -1:
+    slovo = stroka[g:q]
+    stroka = stroka[q+1:len(stroka)]
+    if len(slovo)>10:
+        print(str(n), '. ', slovo[0:9])
+    else:
+        print(str(n), '. ', slovo)
+    q = (stroka.find(' '))
+    n = n + 1
+print(str(n), '. ', stroka)
+
+# Задание 5 и Задание 6 не успел сдаелать
