@@ -1,0 +1,56 @@
+# Задание 1
+def division(x, y):
+    try:
+        z = int(x) / int(y)
+    except ZeroDivisionError:
+        print('На ноль делить нельзя!')
+        y = int(input('Введите делитель отличыный от 0: '))
+        z = int(x) / int(y)
+    return z
+
+
+a = input('Введите делимое: ')
+b = input('Введите делитель: ')
+print(division(a, b))
+
+# Задание 2
+def profile (a, b, c, d, e, f):
+    print(f"Имя - {a}; фамилия - {b}; дата рождения - {c}; город проживания - {d}; email - {e}; телефон - {f};")
+
+
+l_name = input('Введите имя: ')
+f_name = input('Введите фамилию: ')
+birthday = input('Введите дату рожденя: ')
+city = input('Введите город проживания: ')
+email = input('Введите email: ')
+phone = input('Введите телефон: ')
+profile(l_name, f_name, birthday, city, email, phone)
+
+# Задание 3
+def func__three(a,b,c):
+    z = [a, b, c]
+    z.sort()
+    sum = z[1] + z[2]
+    return sum
+
+
+a = 1
+b = 2
+c = 3
+print(func__three(a, b, c))
+
+# Задание 4
+def func__four_f(x, y):
+    degree = x**y
+    return degree
+
+def func__four_s(x, y):
+    i = 0
+    z = 1
+    while i < abs(y):
+        z = z*x
+        i = i+1
+    z = 1/z
+    return z
+print(func__four_f(3, -3))
+print(func__four_s(3, -3))
